@@ -38,8 +38,12 @@ function makeParticlesOnElement(element){
             min_velocity : 10,
 
             gravity: 0.2,
+
+
             start_angle: 0,
             end_angle: 90,
+
+
             height: 3,
             width: 3,
             opacity_start: 1, //opacity at start of run
@@ -146,8 +150,11 @@ function makeParticlesOnElement(element){
             var currentY = params.y;
             var radians = params.angle * (Math.PI/180);
 //                debugger;
+            console.log("My starting angle is",params.angle);
+
             var xVelocity = Math.cos(params.angle) * params.velocity_per_frame;
             var yVelocity = Math.sin(params.angle) * params.velocity_per_frame;
+
             var lifeTime = params.particle_life;
             var rotation_delta = Math.random()*(params.rotation_max - params.rotation_min);
             /*
@@ -212,8 +219,28 @@ function makeParticlesOnElement(element){
         color:{r: 255, g: 0, b:0, o:1},
         gravity: .2,height: 180, width: 180,
 
+        // max_velocity: 800,
+        // min_velocity: 20,
+
         max_velocity: 800,
-        min_velocity: 20,
+        min_velocity: 700,
+
+        //(1/2) pi
+        start_angle: 1.57,
+        end_angle: 1.57,
+
+        // //pi
+        // start_angle: 3.14,
+        // end_angle: 3.14,
+
+        // //(3/2) pi
+        // start_angle: 4.71,
+        // end_angle: 4.71,
+
+        // //2 pi
+        // start_angle: 6.28,
+        // end_angle: 6.28,
+
 
         percentChance: 1,
         rotation_min: .05,
