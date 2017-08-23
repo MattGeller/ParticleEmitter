@@ -1,6 +1,6 @@
 function makeParticlesOnElement(element){
     var targetElement = document.querySelector('body');
-    // var bounds = element.getBoundingClientRect();
+    var bounds = element.getBoundingClientRect();
 
     function makeEmitter(options){
         //Here's an object of default options, just in case you forgot to pass in your own.
@@ -19,14 +19,18 @@ function makeParticlesOnElement(element){
             // This process happens once every chanceTime milliseconds.
             percentChance: .5,
 
-            //how exactly does this work? is it an arbitrary coefficient? is it in milliseconds?
+            //time for one animation cycle to complete
             animationTime: 10,
 
             //how often to check to make a particle
             chanceTime: .1,
             rotation_min: 0,
             rotation_max: 0,
+
+            //how long the particle lives before it is removed
             particle_life: 3000,
+
+            //unused
             color: {r:255, g:255, b:255, o:.5},
 //                velocity: 10, //pixels per second
 
