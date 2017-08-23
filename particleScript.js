@@ -1,6 +1,6 @@
 function makeParticlesOnElement(element){
     var targetElement = document.querySelector('body');
-    var bounds = element.getBoundingClientRect();
+    // var bounds = element.getBoundingClientRect();
 
     function makeEmitter(options){
         //Here's an object of default options, just in case you forgot to pass in your own.
