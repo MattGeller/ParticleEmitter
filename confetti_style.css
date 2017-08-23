@@ -1,0 +1,11 @@
+.glitter{
+    border: 3px solid black;
+    height: 30vh;
+}
+.particle{
+    background-image: url(fire.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: .5;
+}
