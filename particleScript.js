@@ -38,8 +38,12 @@ function makeParticlesOnElement(element){
             min_velocity : 10,
 
             gravity: 0.2,
+
+
             start_angle: 0,
             end_angle: 90,
+
+
             height: 3,
             width: 3,
             opacity_start: 1, //opacity at start of run
@@ -141,13 +145,16 @@ function makeParticlesOnElement(element){
             //if particle.style.opacity is undefined, currentOpacity will be set to 1 instead.
             var currentOpacity = particle.style.opacity || 1;
 
-
             var currentX = params.x;
             var currentY = params.y;
+
+            //angle is in degrees. Math.cos and Math.sin need it to be in radians. Convert degrees to radians and use radians from now on
             var radians = params.angle * (Math.PI/180);
 //                debugger;
-            var xVelocity = Math.cos(params.angle) * params.velocity_per_frame;
-            var yVelocity = Math.sin(params.angle) * params.velocity_per_frame;
+
+            var xVelocity = Math.cos(radians) * params.velocity_per_frame;
+            var yVelocity = Math.sin(radians) * params.velocity_per_frame;
+
             var lifeTime = params.particle_life;
             var rotation_delta = Math.random()*(params.rotation_max - params.rotation_min);
             /*
@@ -214,6 +221,11 @@ function makeParticlesOnElement(element){
 
         max_velocity: 800,
         min_velocity: 20,
+
+
+        start_angle: 225,
+        end_angle:315,
+
 
         percentChance: 1,
         rotation_min: .05,
